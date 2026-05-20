@@ -2,7 +2,8 @@ import sender from "./sender.js";
 
 /* CSS imports */
 import '/src/tw-input.css';
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import "/src/scss/main.scss";
+// import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 import "./utils.js";
 import "./modals.js";
