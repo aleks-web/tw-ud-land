@@ -21,3 +21,7 @@ window.toggleMobileMenu = () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
 });
+
+window.addEventListener('resize', (e) => {
+    console.log(window.innerWidth);
+});
