@@ -22,9 +22,9 @@
 }
 
 @layer utilities {
-    .mobile-menu-open {
+    /* .mobile-menu-open {
         @apply before:bg-red-300 before:fixed before:w-full before:h-full before:flex
-    }
+    } */
 }
 
 @config './../tailwind.config.mjs';
