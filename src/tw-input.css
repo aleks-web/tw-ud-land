@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-sm: 320px;
+    --breakpoint-md: 480px;
+    --breakpoint-lg: 640px;
+    --breakpoint-xl: 920px;
+    --breakpoint-2xl: 1194px;
+}
+
+@utility container {
+    padding-inline: 5px;
+    margin-inline: auto;
+
+    @variant sm {
+        padding-inline: 10px;
+    }
+
+    @variant md {
+        padding-inline: 15px;
+    }
+}
+
+@layer utilities {
+    .mobile-menu-open {
+        @apply before:bg-red-300 before:fixed before:w-full before:h-full before:flex
+    }
+}
+
+@config './../tailwind.config.mjs';
+
+:root {
+    --main-color: #A25FF8;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
