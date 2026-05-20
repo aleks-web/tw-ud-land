@@ -11,8 +11,8 @@
   <body class="group/body flex flex-col pt-2 before:transition-colors">
 
     <!-- Start Header -->
-    <div class="bg-white z-100 group-[.mobile-menu-open]/body:rounded-b-[16px] sm:group-[.mobile-menu-open]/body:rounded-b-[32px] group-[.mobile-menu-open]/body:overflow-hidden">
-      <div class="container w-full py-2 flex justify-between items-center gap-4 md:py-4">
+    <div class="bg-white z-100 top-0 sticky">
+      <div class="container bg-white w-full py-2 flex justify-between items-center gap-4 md:py-4">
 
         <!-- Start Logo -->
         <div class="flex justify-center items-center gap-2 xl:gap-4">
@@ -61,7 +61,13 @@
 
       </div>
 
-      <div class="overflow-hidden group-[.mobile-menu-open]/body:flex hidden">
+      <div class="absolute top-0 translate-y-[-100%] z-[-10] w-full bg-white overflow-hidden
+                  group-[.mobile-menu-open]/body:rounded-b-[16px] sm:group-[.mobile-menu-open]/body:rounded-b-[32px]
+                  group-[.mobile-menu-open]/body:top-full
+                  group-[.mobile-menu-open]/body:translate-y-0
+
+                  transition-all
+      ">
         <div class="container pb-2">
           <!-- Start Info -->
           <div class="flex gap-4 mt-4">
@@ -95,9 +101,6 @@
           <button class="rounded-xl p-2 w-full mt-6 sm:mb-4 text-white text-lg md:text-xl xl:text-2xl font-bold bg-linear-to-bl from-violet-500 to-fuchsia-500 shadow-[0_10px_60px_0_#7d14d0c4]">Оставить заявку</button>
         </div>
       </div>
-
-
-
       
     </div>
     <!-- End Header -->
