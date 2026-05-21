@@ -13,12 +13,24 @@ export const setMask = (element, options = maskOptions) => {
     IMask(element, options);
 }
 
+export const getMaskByElement = (element) => {
+    if (!window.imasks) { return null; }
+
+    for (const mask of window.imasks) {
+        if (mask.maskEl === element) {
+            return mask.mask;
+        }
+    }
+
+    return null;
+}
+
 document.addEventListener('DOMContentLoaded', (e) => {
     const phoneElements = document.querySelectorAll('[data-mask-phone]');
 
     window.imasks = [];
-    phoneElements.forEach(phoneEl => {
-        const mask = IMask(phoneEl, maskOptions);
-        window.imasks.push({ phoneEl, mask });
+    phoneElements.forEach(maskEl => {
+        const mask = IMask(maskEl, maskOptions);
+        window.imasks.push({ maskEl, mask });
     });
 });

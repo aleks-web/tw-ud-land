@@ -141,6 +141,9 @@ class Quiz {
 
         const userLoggedInEvent = new CustomEvent('quiz:step_' + stepNum, { detail: { options, step } });
         document.dispatchEvent(userLoggedInEvent);
+
+        // Костыль
+        document.querySelector('#qz-cont').classList.add('step-' + stepNum);
     }
 
     updateProgressBar() {
@@ -149,6 +152,17 @@ class Quiz {
 
         this.#progressBarElements.forEach(el => {
             el.setAttribute('style', '--progress-width: ' + percent + '%');
+            const els = el.querySelectorAll('*');
+
+            for (const [i, e] of els.entries()) {
+                const needIndex = this.#currentStep - 1;
+
+                if (i <= needIndex) {
+                    e.classList.add('active');
+                }
+
+                continue;
+            }
         });
     }
 
@@ -323,19 +337,22 @@ class Quiz {
     };
 }
 
-// window.quiz = new Quiz()
-//     .setStepElsBySelector('.q__step')
-//     .setStepNumElsSelector('.q__q-count-now')
-//     .setBtnNextElsBySelector('.q__btn-next')
-//     .setBtnPrevElsSelector('.q__btn-prev')
-//     .setProgressBarElsBySelector('.q__progress')
-//     .setQuestionElsBySelector('.q__q-title')
-//     .endSetSelectors();
-//
-//
-// document.addEventListener('qStep:4', (e) => {
-//     const progress = document.querySelector('.q__progress');
-//     setTimeout(() => {
-//         progress.setAttribute('style', '--progress-width: 100%');
-//     }, 10);
-// });
+
+if (document.querySelector('.qz-step')) {
+    window.quiz = new Quiz()
+        .setStepElsBySelector('.qz-step')
+        .setStepNumElsSelector('.qz-num')
+        .setBtnNextElsBySelector('.qz-next')
+        .setBtnPrevElsSelector('.qz-prev')
+        .setProgressBarElsBySelector('.qz-progress')
+        .setQuestionElsBySelector('.qz-question')
+        .endSetSelectors();
+}
+
+document.addEventListener('qStep:5', (e) => {
+    const text = document.querySelector('.qz-num-text');
+    text.innerText = 'Готово';
+
+    document.querySelector('.top-control').classList.add('hidden');
+    document.querySelector('#qz-descr').classList.add('hidden');
+});
