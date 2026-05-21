@@ -8,34 +8,38 @@
     --breakpoint-2xl: 1194px;
 }
 
-@utility container {
-    padding-inline: 10px;
-    margin-inline: auto;
-
-    @variant sm {
-        padding-inline: 15px;
-    }
-
-    @variant md {
-        padding-inline: 20px;
-    }
-
-    @variant xl {
-        padding-inline: 30px;
-    }
-
-    @variant 2xl {
-        padding-inline: 40px;
-    }
-}
-
-@utility map-shadow {
-    box-shadow: 0px 18px 18px 0px #0000001A;
-}
-
 @layer utilities {
     .mobile-menu-open {
         @apply before:bg-gray-600 before:fixed before:w-full before:h-full before:flex before:opacity-50 before:z-0 overflow-hidden
+    }
+
+    .map-shadow {
+        box-shadow: 0px 18px 18px 0px #0000001A;
+    }
+
+    .container {
+        padding-inline: 10px;
+        margin-inline: auto;
+
+        @variant sm {
+            padding-inline: 15px;
+        }
+
+        @variant md {
+            padding-inline: 20px;
+        }
+
+        @variant xl {
+            padding-inline: 30px;
+        }
+
+        @variant 2xl {
+            padding-inline: 40px;
+        }
+    }
+
+    .square-delimeter {
+        @apply block min-w-3 aspect-square rounded-full bg-white
     }
 }
 
