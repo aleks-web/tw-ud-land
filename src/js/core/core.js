@@ -5,3 +5,4 @@ import "./forms.js";
 import "./modals.js";
 import "./last-day.js";
 import "./masks.js";
+import "./htmlHelper.js";

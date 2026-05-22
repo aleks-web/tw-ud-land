@@ -4,5 +4,6 @@ document.querySelectorAll('[data-politic-link]').forEach((link) => {
 
     if (link.tagName == 'A' && region) {
         link.href = `/politic-${region}.pdf`;
+        link.setAttribute('target', '_blank');
     }
 });
