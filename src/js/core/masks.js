@@ -12,6 +12,7 @@ export const maskOptions = {
 export const setMask = (element, options = maskOptions) => {
     IMask(element, options);
 }
+window.setMask = setMask;
 
 export const getMaskByElement = (element) => {
     if (!window.imasks) { return null; }
@@ -22,8 +23,11 @@ export const getMaskByElement = (element) => {
         }
     }
 
+    setMask(element);
+
     return null;
 }
+window.getMaskByElement = getMaskByElement;
 
 document.addEventListener('DOMContentLoaded', (e) => {
     const phoneElements = document.querySelectorAll('[data-mask-phone]');

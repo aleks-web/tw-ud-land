@@ -1,13 +1,19 @@
 window.openMobileMenu = () => {
     document.body.classList.add('mobile-menu-open');
     const menuBtn = document.getElementById('mobile-menu-btn');
-    menuBtn.classList.add('active');
+
+    if (menuBtn) {
+        menuBtn.classList.add('active');
+    }
 }
 
 window.closeMobileMenu = () => {
     document.body.classList.remove('mobile-menu-open');
     const menuBtn = document.getElementById('mobile-menu-btn');
-    menuBtn.classList.remove('active');
+
+    if (menuBtn) {
+        menuBtn.classList.remove('active');
+    }
 }
 
 window.toggleMobileMenu = () => {
@@ -20,8 +26,4 @@ window.toggleMobileMenu = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
-});
-
-window.addEventListener('resize', (e) => {
-    console.log(window.innerWidth);
 });
