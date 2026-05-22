@@ -29,7 +29,7 @@ export default function sender(userData) {
         {
             source: 'website',
             domen: window.location.hostname,
-            city: import.meta.env.VITE_REGION,
+            city: import.meta.env.VITE_REGION ? import.meta.env.VITE_REGION : 66,
             title: dataTitle + `\nЗаявка с сайта ${window.location.hostname}`,
             utm_source: utmSource,
             utm_campaign: utmCampaign,
