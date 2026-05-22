@@ -11,10 +11,9 @@
 <body class="group/body flex flex-col pt-2 before:transition-colors">
 
 <!-- Start Header -->
-<div class="z-100 mt-20">
+<div class="z-100 w-full top-[10px] lg:flex hidden absolute xl:top-[30px] 2xl:top-[50px]">
     <div class="container w-full py-2 flex justify-between items-center gap-4 md:py-4">
 
-        <!-- Start Logo -->
         <div class="flex justify-center items-center gap-2 xl:gap-4">
             <svg class="w-6 aspect-square sm:w-10 md:w-12 xl:w-14"><use href="#svg-logo"></use></svg>
             <div class="font-extrabold uppercase flex-col flex text-[12px] sm:hidden md:flex xl:text-lg">
@@ -22,78 +21,19 @@
                 <span>стоматология</span>
             </div>
         </div>
-        <!-- END Logo -->
 
     </div>
-
-    <div style="transform: translateY(-100%)" class="absolute top-0 z-[-10] w-full bg-white overflow-hidden
-          group-[.mobile-menu-open]/body:rounded-b-[16px] sm:group-[.mobile-menu-open]/body:rounded-b-[32px]
-          group-[.mobile-menu-open]/body:top-full
-          group-[.mobile-menu-open]/body:translate-y-0
-          transition-all
-      ">
-        <div class="container pb-2">
-            <!-- Start Info -->
-            <div class="flex gap-4 mt-4">
-                <svg class="min-w-6 max-w-6 aspect-square" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.2417 20.5917L7 18.4042L1.575 20.5042C1.38056 20.5819 1.19078 20.6064 1.00567 20.5777C0.820556 20.5489 0.650611 20.4855 0.495833 20.3875C0.341055 20.2895 0.219722 20.1584 0.131833 19.9943C0.0439443 19.8302 0 19.6404 0 19.425V3.0625C0 2.80972 0.0731111 2.58611 0.219333 2.39167C0.365555 2.19722 0.564667 2.05139 0.816667 1.95417L6.24167 0.116667C6.35833 0.0777777 6.48006 0.0486112 6.60683 0.0291668C6.73361 0.00972233 6.86467 0 7 0C7.13533 0 7.26678 0.00972233 7.39433 0.0291668C7.52189 0.0486112 7.64322 0.0777777 7.75833 0.116667L14 2.30417L19.425 0.204167C19.6194 0.126389 19.8092 0.102278 19.9943 0.131833C20.1794 0.161389 20.3494 0.224389 20.5042 0.320833C20.6589 0.417278 20.7807 0.548722 20.8693 0.715167C20.958 0.881611 21.0016 1.071 21 1.28333V17.6458C21 17.8986 20.9273 18.1222 20.7818 18.3167C20.6364 18.5111 20.4369 18.6569 20.1833 18.7542L14.7583 20.5917C14.6417 20.6306 14.5203 20.6597 14.3943 20.6792C14.2683 20.6986 14.1369 20.7083 14 20.7083C13.8631 20.7083 13.7321 20.6986 13.6068 20.6792C13.4816 20.6597 13.3599 20.6306 13.2417 20.5917ZM12.8333 17.9958V4.34583L8.16667 2.7125V16.3625L12.8333 17.9958Z" fill="#2D2D2D"/>
-                </svg>
-
-                <div class="flex flex-col">
-                    <div class="font-bold text-xl sm:text-2xl">Екатеринбруг</div>
-                    <span class="font-medium text-sm md:text-lg">ул. Серова, д. 45 </span>
-                    <span class="font-medium text-sm md:text-lg">ул. Сулимова, 53а</span>
-                    <span class="font-medium text-sm md:text-lg">ул. Добролюбова, 16/2</span>
-                </div>
-            </div>
-            <!-- End Info -->
-
-            <!-- Start Info -->
-            <div class="flex gap-4 mt-4 md:mt-8 lg:mt-10">
-                <svg class="min-w-6 max-w-6 aspect-square" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.9043 14.2917L15.941 13.9533C15.5925 13.9124 15.2393 13.951 14.9079 14.0662C14.5765 14.1813 14.2756 14.3701 14.0276 14.6183L11.881 16.765C8.56925 15.0803 5.87736 12.3884 4.19262 9.07667L6.35095 6.91834C6.85262 6.41667 7.09762 5.71667 7.01595 5.005L6.67762 2.065C6.61172 1.49577 6.33866 0.970696 5.91049 0.589862C5.48232 0.209027 4.92898 -0.000933416 4.35595 3.11961e-06H2.33762C1.01929 3.11961e-06 -0.0773809 1.09667 0.00428572 2.415C0.622619 12.3783 8.59095 20.335 18.5426 20.9533C19.861 21.035 20.9576 19.9383 20.9576 18.62V16.6017C20.9693 15.4233 20.0826 14.4317 18.9043 14.2917Z" fill="#2D2D2D"/>
-                </svg>
-
-
-                <div class="flex flex-col">
-                    <div class="font-bold text-xl">+7 (343) 344-49-88</div>
-                    <span class="font-medium text-sm md:text-lg">Ежедневно 09:00-21:00</span>
-                </div>
-            </div>
-            <!-- End Info -->
-
-            <button class="animation-btn w-full mt-6 sm:mb-4 shadow-[0_10px_60px_0_#7d14d0c4]">
-                <div class="wrapper">
-                    <span class="text-lg md:text-xl xl:text-2xl font-bold">Оставить заявку</span>
-                    <div class="circle circle-12"></div>
-                    <div class="circle circle-11"></div>
-                    <div class="circle circle-10"></div>
-                    <div class="circle circle-9"></div>
-                    <div class="circle circle-8"></div>
-                    <div class="circle circle-7"></div>
-                    <div class="circle circle-6"></div>
-                    <div class="circle circle-5"></div>
-                    <div class="circle circle-4"></div>
-                    <div class="circle circle-3"></div>
-                    <div class="circle circle-2"></div>
-                    <div class="circle circle-1"></div>
-                </div>
-            </button>
-
-        </div>
-    </div>
-
 </div>
 <!-- End Header -->
 
 <!-- Start Hero -->
-<div class="relative -top-[150px]">
+<div class="relative top-[10px] lg:-top-[50px] xl:-top-[70px]">
     <div class="container relative">
 
         <div class="relative mt-5">
             <img class="max-w-[170px] md:max-w-[225px] lg:max-w-[140px] xl:max-w-[195px] 2xl:max-w-max 2xl:w-[240px] m-auto" src="/src/images/hero-logo.png" alt="hero-logo">
             <img class="hidden absolute z-0 top-[60px] md:top-[73px] lg:hidden w-full mx-auto sm:flex group-[.mobile-menu-open]/body:opacity-10 transition-all" src="/src/images/hero-bg-1.png" alt="bg">
-            <img class="hidden absolute z-0 w-full top-[43px] lg:flex xl:top-[55px] 2xl:top-[60px]" src="/src/images/success-bg.png" alt="bg-success-last">
+            <img class="hidden absolute z-0 w-full top-[125px] lg:flex xl:top-[173px] 2xl:top-[210px]" src="/src/images/hero-bg-last-mob.png" alt="bg-success-last">
         </div>
 
         <div>
