@@ -24,12 +24,13 @@ export default function sender(userData) {
     let domen = window.location.hostname;
     utmSource = (utmSource == '') ? domen : utmSource;
 
+    const dataTitle = import.meta.env.VITE_SENDER_TITLE ? import.meta.env.VITE_SENDER_TITLE : '';
     let data =
         {
             source: 'website',
             domen: window.location.hostname,
-            city: 66,
-            title: `Все зубы сразу + адаптационный протез бесплатно\nЗаявка с сайта ${window.location.hostname}`,
+            city: import.meta.env.VITE_REGION,
+            title: dataTitle + `\nЗаявка с сайта ${window.location.hostname}`,
             utm_source: utmSource,
             utm_campaign: utmCampaign,
             utm_content: utmContent,
@@ -53,6 +54,14 @@ export default function sender(userData) {
         });
     }
 
-    fetchLead("form", data, () => { document.dispatchEvent(new CustomEvent('fetchLeadSuccess', { detail: { data } })) }, '^\\+7\\d{10}$', errorCallback => (console.log("Ошибка маски")));
+    fetchLead("form", data, () => { eventSuccess(data) }, '^\\+7\\d{10}$', () => { console.log('Ошибка маски'); eventError(data); });
     sendToBackup(data);
+
+    function eventSuccess(data) {
+        document.dispatchEvent(new CustomEvent('fetchLeadSuccess', { detail: { data } }))
+    }
+
+    function eventError(data) {
+        document.dispatchEvent(new CustomEvent('fetchLeadError', { detail: { data } }))
+    }
 }

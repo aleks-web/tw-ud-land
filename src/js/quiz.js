@@ -337,6 +337,13 @@ class Quiz {
     };
 }
 
+document.addEventListener('qStep:5', (e) => {
+    const text = document.querySelector('.qz-num-text');
+    text.innerText = 'Готово';
+
+    document.querySelector('.top-control').classList.add('hidden');
+    document.querySelector('#qz-descr').classList.add('hidden');
+});
 
 if (document.querySelector('.qz-step')) {
     window.quiz = new Quiz()
@@ -348,11 +355,3 @@ if (document.querySelector('.qz-step')) {
         .setQuestionElsBySelector('.qz-question')
         .endSetSelectors();
 }
-
-document.addEventListener('qStep:5', (e) => {
-    const text = document.querySelector('.qz-num-text');
-    text.innerText = 'Готово';
-
-    document.querySelector('.top-control').classList.add('hidden');
-    document.querySelector('#qz-descr').classList.add('hidden');
-});

@@ -87,7 +87,7 @@ HTMLElement.prototype.countAnimate = function(count, speed = 300, callback = () 
     animate.bind(this)(count, speed);
 }
 
-window.clearPhone = (string) => {
+window.formatPhone = (string) => {
     return '+' + string.replace(/[^\d]+/g, '');
 }
 
@@ -98,3 +98,12 @@ document.body.disableScroll = () => {
 document.body.enableScroll = () => {
     document.body.style.overflow = 'auto';
 }
+
+// Подставляем нужный файл политики конфиденциальности
+document.querySelectorAll('[data-politic-link]').forEach((link) => {
+    const region = import.meta.env.VITE_REGION;
+
+    if (link.tagName == 'A' && region) {
+        link.href = `/politic-${region}.pdf`;
+    }
+});

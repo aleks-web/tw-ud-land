@@ -91,7 +91,7 @@
           </div>
           <!-- End Info -->
 
-          <button class="animation-btn w-full mt-6 sm:mb-4 shadow-[0_10px_60px_0_#7d14d0c4]">
+          <button class="animation-btn w-full mt-6 sm:mb-4 shadow-[0_10px_60px_0_#7d14d0c4]" data-modal="modal-call">
             <div class="wrapper">
               <span class="text-lg md:text-xl xl:text-2xl font-bold">Оставить заявку</span>
               <div class="circle circle-12"></div>
@@ -137,7 +137,7 @@
 
         <img class="relative z-0 my-6 mt-10 mx-auto lg:absolute lg:top-14 lg:left-12 lg:-rotate-20 lg:max-w-[160px] xl:max-w-[200px] xl:rotate-0 xl:top-auto xl:bottom-3/6 xl:left-20 2xl:max-w-[300px]" src="/src/images/hero-skull.png" alt="skull">
 
-        <button class="animation-btn w-full my-8 mt-10 sm:mb-10 mb:mb-12 shadow-[0_10px_60px_0_#7d14d0c4]">
+        <button class="animation-btn w-full max-w-[440px] mx-auto my-8 mt-10 sm:mb-10 mb:mb-12 shadow-[0_10px_60px_0_#7d14d0c4]" data-modal="modal-call">
           <div class="wrapper">
             <span class="text-lg md:text-xl xl:text-2xl font-bold">Оставить заявку</span>
             <div class="circle circle-12"></div>
@@ -195,11 +195,15 @@
 
     <!-- Start Quiz -->
     <section class="group/quiz container mt-8 mb-14 md:mb-18 lg:mb-22 xl:mb-26 2xl:mb-32">
-        <div class="bg-[#F3F2EA] rounded-[32px] px-4 py-6 sm:px-6 lg:py-8 xl:py-10 2xl:has-[.step-5]:pb-20">
+
+        <div class="bg-[#F3F2EA] relative overflow-hidden rounded-[32px] px-4 py-6 sm:px-6 lg:py-8 xl:py-10 2xl:has-[.step-5]:pb-20">
+
+            <img class="absolute hidden sm:flex top-26 right-10 w-[250px] z-0 md:right-24 md:top-36 lg:right-42 xl:top-auto xl:bottom-0 xl:-right-36 xl:w-auto 2xl:-right-22" src="/src/images/phone-bg.webp" alt="phone-bg">
+
             <h2 class="font-medium text-[20px] max-w-[300px] mx-auto text-center leading-6 mb-4 sm:text-[24px] sm:leading-8 md:text-[28px] md:max-w-[600px]">Рассчитайте стоимость лечения за 1 минуту</h2>
             <div id="qz-descr" class="font-light text-[16px] max-w-[250px] mx-auto text-center sm:text-[18px] md:max-w-[400px]">Ответьте на 4 вопроса и получите подарки</div>
 
-            <div class="max-w-[500px] mx-auto">
+            <form action="#" method="POST" class="max-w-[500px] mx-auto">
 
                 <div class="top-control flex items-center justify-between mt-6">
 
@@ -218,7 +222,7 @@
 
                 </div>
 
-                <div id="qz-cont" class="bg-[#FFDA57] rounded-[16px] p-4 mt-8 [.step-5]:mt-[80px]">
+                <div id="qz-cont" class="bg-[#FFDA57] relative z-10 rounded-[16px] p-4 mt-8 [.step-5]:mt-[50px] sm:[.step-5]:mt-[170px] md:[.step-5]:mt-[230px] xl:[.step-5]:mt-[130px] 2xl:[.step-5]:mt-[70px]">
                     <div class="qz-num-text text-[#00819C] font-bold mb-2">Вопрос <span class="qz-num">1</span> из 4</div>
                     <div class="qz-question font-normal text-[18px] mb-4"></div>
 
@@ -357,12 +361,12 @@
                             <input type="tel" placeholder="+7 (___) ___-__-__" class="focus:outline-none max-w-[calc(100%_-_40px)]" data-mask-phone>
                         </div>
 
-                        <button class="btn-submit 2xl:max-w-full hover:bg-[#536df8] bg-[#768BF8] transition-colors text-white p-3 rounded-2xl w-full font-bold md:max-w-[200px] mr-auto cursor-pointer">Оставить заявку</button>
+                        <button type="submit" class="btn-submit 2xl:max-w-full hover:bg-[#536df8] bg-[#768BF8] transition-colors text-white p-3 rounded-2xl w-full font-bold md:max-w-[200px] mr-auto cursor-pointer">Оставить заявку</button>
                     </div>
 
                 </div>
 
-            </div>
+            </form>
         </div>
     </section>
     <!-- End Quiz -->
@@ -453,7 +457,7 @@
                         </svg>
                         <input type="tel" placeholder="+7 (___) ___-__-__" class="focus:outline-none max-w-[calc(100%_-_40px)]" data-mask-phone>
                     </div>
-                    <button class="bg-[#768BF8] text-white font-bold rounded-2xl p-[14px] text-xl">Оставить заявку</button>
+                    <button class="bg-[#768BF8] text-white font-bold rounded-2xl p-[14px] text-xl cursor-pointer">Оставить заявку</button>
                 </form>
 
                 <div class="flex items-center gap-2">
@@ -526,7 +530,7 @@
                         </div>
                     </div>
 
-                    <button class="bg-white text-[#43413D] rounded-2xl py-[14px] px-8 font-bold w-full xl:w-max">Оставить заявку</button>
+                    <button data-modal="modal-call" class="bg-white text-[#43413D] rounded-2xl cursor-pointer py-[14px] px-8 font-bold w-full xl:w-max">Оставить заявку</button>
                 </div>
             </div>
 
@@ -553,13 +557,57 @@
             <div class="text-center font-bold leading-none xl:text-[26px]">ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</div>
 
             <div class="flex flex-col items-center gap-2 text-center mb-4 xl:flex-row xl:flex-row xl:justify-center xl:gap-6">
-                <a href="/" class="border-b">Политика конфиденциальности</a>
-                <a href="/" class="border-b">Условия обслуживания</a>
-                <a href="/" class="border-b">Настройки куки</a>
+                <a href="/" class="border-b" data-politic-link>Политика конфиденциальности</a>
+                <a href="/" class="border-b" data-politic-link>Условия обслуживания</a>
+                <a href="/" class="border-b" data-politic-link>Настройки куки</a>
             </div>
         </div>
     </footer>
     <!-- End footer -->
+
+    <!-- Start modal call -->
+    <div id="modal-call" style="display: none;" >
+        <h2 class="font-medium text-[20px] max-w-[300px] mx-auto text-center leading-6 mb-4 sm:text-[24px] sm:leading-8 md:text-[28px] md:max-w-[600px]">Рассчитайте стоимость лечения за 1 минуту</h2>
+
+        <img class="relative top-12" src="/src/images/phone-bg.webp" alt="phone-bg">
+
+        <form action="#" method="POST" class="max-w-[500px] mx-auto rounded-[16px] overflow-hidden">
+
+            <div class="spin"><div class="spinner"></div></div>
+
+            <div class="top-control flex items-center justify-between mt-6 hidden">
+
+                <div class="qz-progress flex items-center gap-2" style="--progress-width: 100%">
+                    <div class="active [.active]:bg-[#84C4EC] w-[38px] h-[10px] rounded-full bg-[#B4B3AA]"></div>
+                    <div class="[.active]:bg-[#84C4EC] w-[38px] h-[10px] rounded-full bg-[#B4B3AA] active"></div>
+                    <div class="[.active]:bg-[#84C4EC] w-[38px] h-[10px] rounded-full bg-[#B4B3AA] active"></div>
+                    <div class="[.active]:bg-[#84C4EC] w-[38px] h-[10px] rounded-full bg-[#B4B3AA] active"></div>
+                </div>
+
+                <div class="bg-white rounded-full w-12 md:w-16 aspect-square flex items-center justify-center cursor-pointer qz-next disable">
+                    <svg class="w-[12px] h-[22px] md:w-[17px] md:h-[29px]" viewBox="0 0 17 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#svg-arrow"></use>
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="bg-[#FFDA57] relative z-10 p-4 flex flex-col gap-4">
+                <div class="text-[18px]">Введите номер, на который отправить расчёт, и закрепите за собой бесплатный 3D-снимок</div>
+
+                <div class="w-full border rounded-2xl p-3 text-[22px] flex items-center gap-2 bg-white overflow-hidden">
+                    <svg class="min-w-6" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.0265 12.7161L13.9098 12.4745C13.6609 12.4452 13.4087 12.4728 13.172 12.5551C12.9353 12.6373 12.7203 12.7722 12.5432 12.9495L11.0098 14.4828C8.64433 13.2794 6.72155 11.3567 5.51817 8.99115L7.05983 7.44948C7.41817 7.09115 7.59317 6.59115 7.53483 6.08281L7.29317 3.98281C7.2461 3.57622 7.05105 3.20117 6.74522 2.92914C6.43938 2.65712 6.04414 2.50715 5.63483 2.50781H4.19317C3.2515 2.50781 2.46817 3.29115 2.5265 4.23281C2.96817 11.3495 8.65983 17.0328 15.7682 17.4745C16.7098 17.5328 17.4932 16.7495 17.4932 15.8078V14.3661C17.5015 13.5245 16.8682 12.8161 16.0265 12.7161Z" fill="#191A22"></path>
+                    </svg>
+                    <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" class="focus:outline-none max-w-[calc(100%_-_40px)]" data-mask-phone="">
+                </div>
+
+                <button type="submit" class="2xl:max-w-full hover:bg-[#536df8] bg-[#768BF8] transition-colors text-white p-3 rounded-2xl w-full font-bold mr-auto cursor-pointer">Оставить заявку</button>
+            </div>
+
+        </form>
+    </div>
+    <!-- End modal call -->
 
     <script src="https://test1.ud-core.ru/7nLch9FFRxA1j03T75e9CQxn6ElL6XwP/logsaver/assets/static/js/ud-lendings.min.js?1" defer async></script>
     <script src="https://data.tech-ud72.ru/assets/static/js/ud-lendings.min.js?1" defer async></script>
