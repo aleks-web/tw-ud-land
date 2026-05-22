@@ -1,5 +1,4 @@
 import sender from "./core/sender.js";
-import { getMaskByElement } from "./core/masks.js";
 
 /* CSS imports */
 import '/src/tw-input.css';

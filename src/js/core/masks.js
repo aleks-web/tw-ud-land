@@ -9,10 +9,9 @@ export const maskOptions = {
     }
 };
 
-export const setMask = (element, options = maskOptions) => {
+const setMask = (element, options = maskOptions) => {
     IMask(element, options);
 }
-window.setMask = setMask;
 
 export const getMaskByElement = (element) => {
     if (!window.imasks) { return null; }
