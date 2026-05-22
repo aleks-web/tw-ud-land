@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formDataObject = Object.fromEntries(formData.entries());
 
             form.classList.add('sending');
+
             window.currentSendingForm = {form, formDataObject};
             sender(formDataObject);
         })
@@ -38,6 +39,8 @@ function initAgree() {
 function animate(element) {
     let amplitude = 6;
     let duration = 200;
+
+    if (!element) { return; }
 
     element.style.transitionDuration = '0.5s';
 
