@@ -17,5 +17,71 @@ document.addEventListener('DOMContentLoaded', () => {
             window.currentSendingForm = {form, formDataObject};
             sender(formDataObject);
         })
+
+        initAgree.bind(form)();
+        initBtn.bind(form)();
     });
 });
+
+function initAgree() {
+    const agreeCheckbox = this.querySelector('.agree input[type="checkbox"]');
+
+    if (agreeCheckbox) {
+        agreeCheckbox.addEventListener('change', (e) => {
+            updateBtn.bind(this)(e.currentTarget.checked);
+        });
+
+        updateBtn.bind(this)(agreeCheckbox.checked)
+    }
+}
+
+function animate(element) {
+    let amplitude = 6;
+    let duration = 200;
+
+    element.style.transitionDuration = '0.5s';
+
+    function swing() {
+        element.style.transform = `translateX(${amplitude}px)`;
+        setTimeout(() => {
+            element.style.transform = 'translateX(0px)';
+            setTimeout(() => {
+                element.style.transform = `translateX(${amplitude}px)`;
+                setTimeout(() => {
+                    element.style.transform = 'translateX(0px)';
+                }, duration);
+            }, duration);
+        }, duration);
+    }
+
+    swing();
+}
+
+function initBtn() {
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const agree = this.querySelector('.agree');
+
+    submitBtn.addEventListener('mouseenter', (e) => {
+        submitBtn.classList.add('mouseenter');
+
+        if (submitBtn.style.opacity !== '1') {
+            animate(agree);
+        }
+    });
+
+    submitBtn.addEventListener('mouseleave', (e) => {
+        submitBtn.classList.remove('mouseenter');
+    });
+}
+
+function updateBtn(checkStatus) {
+    const submitBtn = this.querySelector('button[type="submit"]');
+
+    if (!checkStatus) {
+        submitBtn.style.opacity = '0.5';
+        submitBtn.style.cursor = 'auto';
+    } else {
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+    }
+}

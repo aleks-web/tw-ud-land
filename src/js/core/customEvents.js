@@ -12,7 +12,7 @@ document.addEventListener('fetchLeadSuccess', async (e) => {
 });
 
 document.addEventListener('fetchLeadError', async (e) => {
-    setTimeout(() => document.querySelector('.sending').classList.remove('sending'), 500);
+    setTimeout(() => document.querySelector('.sending')?.classList.remove('sending'), 500);
 
     if (window.currentSendingForm) {
         window.currentSendingForm.form.classList.add('error');
