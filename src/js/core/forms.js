@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('form');
 
     forms.forEach((form) => {
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const formData = new FormData(form);
@@ -17,12 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
             window.currentSendingForm = {form, formDataObject};
             sender(formDataObject);
-        })
+        });
 
         initAgree.bind(form)();
         initBtn.bind(form)();
+        initInputPhone.bind(form)();
     });
 });
+
+function initInputPhone() {
+    if (import.meta.env.DEV) {
+        const input = this.querySelector('input[name="phone"]');
+
+        function generatePhoneNumber() {
+            let phoneNumber = '';
+            for (let i = 0; i < 7; i++) {
+                phoneNumber += Math.floor(Math.random() * 7);
+            }
+            return phoneNumber;
+        }
+
+        input.value = "999" + generatePhoneNumber();
+    }
+}
 
 function initAgree() {
     const agreeCheckbox = this.querySelector('.agree input[type="checkbox"]');
@@ -64,21 +82,23 @@ function initBtn() {
     const submitBtn = this.querySelector('button[type="submit"]');
     const agree = this.querySelector('.agree');
 
-    submitBtn.addEventListener('mouseenter', (e) => {
+    submitBtn?.addEventListener('mouseenter', (e) => {
         submitBtn.classList.add('mouseenter');
 
-        if (submitBtn.style.opacity !== '1') {
+        if (submitBtn.style.opacity !== '1' && agree) {
             animate(agree);
         }
     });
 
-    submitBtn.addEventListener('mouseleave', (e) => {
+    submitBtn?.addEventListener('mouseleave', (e) => {
         submitBtn.classList.remove('mouseenter');
     });
 }
 
 function updateBtn(checkStatus) {
     const submitBtn = this.querySelector('button[type="submit"]');
+
+    if (!submitBtn) { return; }
 
     if (!checkStatus) {
         submitBtn.style.opacity = '0.5';

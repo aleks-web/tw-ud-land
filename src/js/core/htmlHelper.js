@@ -32,9 +32,4 @@ function initJs() {
         console.log(e);
     });
     devHelper.style.zIndex = findHighestZIndex() + 1;
-
-    const mediaScreens = Object.values(themeConfig.theme.screens);
-    mediaScreens.forEach((media) => {
-        console.log(parseInt(media), window.innerWidth);
-    });
 }
