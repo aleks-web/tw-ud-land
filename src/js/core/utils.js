@@ -87,6 +87,22 @@ HTMLElement.prototype.countAnimate = function(count, speed = 300, callback = () 
     animate.bind(this)(count, speed);
 }
 
+window.findHighestZIndex = () => {
+    let maxZIndex = 0;
+    const allElements = document.querySelectorAll('*');
+
+    allElements.forEach(element => {
+        const style = window.getComputedStyle(element);
+        const zIndex = parseInt(style.zIndex, 10);
+
+        if (!isNaN(zIndex) && zIndex > maxZIndex) {
+            maxZIndex = zIndex;
+        }
+    });
+
+    return Number(maxZIndex);
+}
+
 window.formatPhone = (string) => {
     return '+' + string.replace(/[^\d]+/g, '');
 }
