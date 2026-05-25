@@ -21,4 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
             sender(result);
         }
     });
+
+
+    document.addEventListener('fetchLeadSuccess', (e) => {
+        window.location = '/success.html';
+    });
 });
